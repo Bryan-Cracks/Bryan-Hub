@@ -1,0 +1,374 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Bryan Hub v0.2", HidePremium = false, SaveConfig = true, ConfigFolder = "Bryan_Hub"})
+
+power = 16
+
+OrionLib:MakeNotification({
+	Name = "Hello",
+	Content = "Welcome To The Bryan Hub!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+---------new tab
+
+local TutTab = Window:MakeTab({
+	Name = "Info Update",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+
+local Section = TutTab:AddSection({
+	Name = "Hello friend! Im The Bryan Hub, Please Be Happy"
+})
+
+local Section = TutTab:AddSection({
+	Name = "UPDATE BETA 0.2!"
+})
+
+local Section = TutTab:AddSection({
+	Name = "Reworked Every Section!"
+})
+
+local Section = TutTab:AddSection({
+	Name = "New Scripts"
+})
+
+local Section = TutTab:AddSection({
+	Name = "Executors Tab Removed!"
+})
+
+local Section = TutTab:AddSection({
+	Name = "Removed All Players Hub And Maked A Tab For It"
+})
+
+local Section = TutTab:AddSection({
+	Name = "More Things Coming Soon"
+})
+
+local Section = TutTab:AddSection({
+	Name = "UPDATE BETA 0.2.1!"
+})
+
+local Section = TutTab:AddSection({
+	Name = "Fixed Bugs"
+})
+
+SettingTab:AddButton({
+	Name = "Delete Script",
+	Callback = function(Value)
+OrionLib:Destroy()
+   end
+})
+
+------- new tab
+
+local PlayerTab = Window:MakeTab({
+	Name = "Player Things",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = PlayerTab:AddSection({
+	Name = "Player Propertys"
+})
+
+PlayerTab:AddSlider({
+	Name = "WalkSpeed",
+	Min = 16,
+	Max = 500,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "WS",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+PlayerTab:AddSlider({
+	Name = "Jump Power",
+	Min = 16,
+	Max = 500,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Height",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
+})
+
+PlayerTab:AddSlider({
+	Name = "Spin Power",
+	Min = 16,
+	Max = 50000,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Power",
+	Callback = function(Value)
+		power = Value
+	end    
+})
+
+local Section = PlayerTab:AddSection({
+	Name = "The Follow Things May Not Work"
+})
+
+local Section = TutTab:AddSection({
+	Name = "Please Dont Report"
+})
+
+local Section = TutTab:AddSection({
+	Name = "It Is Being Fixed!"
+})
+
+PlayerTab:AddTextbox({
+    Name = "Teleport",
+    Default = "User",
+    TextDisappear = false,
+    Callback = function(Value)
+        local targetPlayer = game.Players:FindFirstChild(Value)
+        if targetPlayer then
+   player.Character.HumanoidRootPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame 
+        else
+            OrionLib:MakeNotification({
+                Name = "Invalid Username",
+                Content = "Could not find player",
+                Image = "rbxassetid://4483345998",
+                Time = 3
+            })
+        end
+    end
+})
+
+PlayerTab:AddButton({
+	Name = "Reset Character",
+	Callback = function()
+      	player.Character.Humanoid.Health = 0
+      	OrionLib:MakeNotification({
+	Name = "Reset Success!",
+	Content = "Reseted Character",
+	Image = "rbxassetid://4483345998",
+	Time = 2
+})
+
+  	end    
+})
+PlayerTab:AddButton({
+	Name = "Sit",
+	Callback = function()
+      	player.Character.Humanoid.Sit = true
+      	OrionLib:MakeNotification({
+	Name = "Seated",
+	Content = "Success",
+	Image = "rbxassetid://4483345998",
+	Time = 2
+})
+end
+})
+PlayerTab:AddToggle({
+	Name = "Bhop",
+	Default = false,
+	Callback = function(Value)
+	    if Value == true then
+	        infinitejump = true
+	  OrionLib:MakeNotification({
+	Name = "Bhop Enabled",
+	Content = "Enabled",
+	Image = "rbxassetid://4483345998",
+	Time = 2
+	})
+     	 while infinitejump == true do
+ 
+      	    wait()
+      	    player.Character.Humanoid.Jump = true
+      	    end
+      	else
+      	    	  OrionLib:MakeNotification({
+	Name = "Bhop Disabled",
+	Content = "Disabled",
+	Image = "rbxassetid://4483345998",
+	Time = 2
+	})
+	infinitejump = false
+  	 end
+   end
+})
+
+local Section = PlayerTab:AddSection({
+	Name = "Player Utils/Active Scripts"
+})
+
+PlayerTab:AddButton({
+	Name = "Tp Tool",
+	Callback = function()
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/Bryan-Cracks/Bryan-Hub/refs/heads/main/tptool"),true))()
+  	end    
+})
+
+PlayerTab:AddButton({
+	Name = "Spin In The Selected Power",
+	Callback = function()
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/Bryan-Cracks/Bryan-Hub/refs/heads/main/spinbuttonsorce"),true))()
+  	end    
+})
+
+-------new tab
+
+local PlayerTab = Window:MakeTab({
+	Name = "Other Hubs",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = PlayerTab:AddSection({
+	Name = "Blox Fruits"
+})
+
+PlayerTab:AddButton({
+	Name = "HoHoHub",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
+  	end    
+})
+
+PlayerTab:AddButton({
+	Name = "HoHoHub PvP Mode",
+	Callback = function()
+              _G.HOHO_PVP_UI = true
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
+  	end    
+})
+
+PlayerTab:AddButton({
+	Name = "Turbo Lite Hub Auto Bounty",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/refs/heads/main/AutoBounty.lua"))()
+  	end    
+})
+
+PlayerTab:AddButton({
+	Name = "Master Hub New",
+	Callback = function()
+              getgenv().Team = "Pirates" -- Pirates/Marines
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/NGUYENVUDUY1/Make/refs/heads/main/MasterHub.lua"))()
+  	end    
+})
+
+local Section = PlayerTab:AddSection({
+	Name = "Some Scripts For Blox Fruits May Not Work"
+})
+
+local Section = PlayerTab:AddSection({
+	Name = "Adding More Games Later...."
+})
+
+-----new tab
+
+local AdminTab = Window:MakeTab({
+	Name = "Admins",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = AdminTab:AddSection({
+	Name = "Best Admins!"
+})
+
+AdminTab:AddButton({
+	Name = "Infinite Yield",
+	Callback = function(Value)
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source', true))()
+   end
+})
+AdminTab:AddButton({
+	Name = "Fates Admin",
+	Callback = function(Value)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+   end
+})
+
+local OthersTab = Window:MakeTab({
+	Name = "Others",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = OthersTab:AddSection({
+	Name = "Other Things"
+})
+
+
+OthersTab:AddButton({
+	Name = "Dex V2",
+	Callback = function(Value)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MariyaFurmanova/Library/main/dex2.0", true))()
+   end
+})
+
+OthersTab:AddButton({
+	Name = "Unamed ESP",
+	Callback = function(Value)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua',true))()
+   end
+})
+
+OthersTab:AddButton({
+	Name = "UNC Test",
+	Callback = function(Value)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/main/UNCCheckEnv.lua',true))()
+   end
+})
+
+OthersTab:AddButton({
+	Name = "Vulnerability Checker",
+	Callback = function(Value)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ElijahGamingRBLX2/UNC-And-Scripts/main/RobloxExecutorVulnerabilityTest.lua"))()
+   end
+})
+
+local CreditsTab = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = CreditsTab:AddSection({
+	Name = "Credits: Bryan (Owner)"
+})
+
+local Section = CreditsTab:AddSection({
+	Name = "Credits: FTIX (Helped Me In Project!)"
+})
+
+local SistemTab = Window:MakeTab({
+	Name = "System",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = SistemTab:AddSection({
+	Name = "Working Out To Fix All Bugs! If You See Any Bug Please Report In Here, PLEASE DONT ABUSE OF IT"
+})
+
+SistemTab:AddTextbox({
+	Name = "REPORT BUG",
+	Default = "click in me to write the bug!",
+	TextDisappear = true,
+	Callback = function(Value)
+		bug = Value
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Send The Message!",
+	Callback = function()
+      		print("sended the message") print(bug)
+  	end    
+})
+
+OrionLib:Init()
