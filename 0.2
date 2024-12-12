@@ -48,6 +48,14 @@ local Section = TutTab:AddSection({
 	Name = "More Things Coming Soon"
 })
 
+local Section = TutTab:AddSection({
+	Name = "UPDATE BETA 0.2.1!"
+})
+
+local Section = TutTab:AddSection({
+	Name = "Fixed Bugs"
+})
+
 SettingTab:AddButton({
 	Name = "Delete Script",
 	Callback = function(Value)
@@ -104,6 +112,18 @@ PlayerTab:AddSlider({
 	Callback = function(Value)
 		power = Value
 	end    
+})
+
+local Section = PlayerTab:AddSection({
+	Name = "The Follow Things May Not Work"
+})
+
+local Section = TutTab:AddSection({
+	Name = "Please Dont Report"
+})
+
+local Section = TutTab:AddSection({
+	Name = "It Is Being Fixed!"
 })
 
 PlayerTab:AddTextbox({
