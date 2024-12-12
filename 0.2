@@ -278,7 +278,7 @@ local OthersTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local Section = PlayerTab:AddSection({
+local Section = OthersTab:AddSection({
 	Name = "Other Things"
 })
 
@@ -294,13 +294,6 @@ OthersTab:AddButton({
 	Name = "Unamed ESP",
 	Callback = function(Value)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua',true))()
-   end
-})
-
-OthersTab:AddButton({
-	Name = "Universal Aimbot (BY FTIX)
-	Callback = function(Value)
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Bryan-Cracks/Bryan-Hub/refs/heads/main/FTIX%20AIMBOT',true))()
    end
 })
 
