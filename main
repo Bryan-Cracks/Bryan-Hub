@@ -364,7 +364,7 @@ SistemTab:AddTextbox({
 	end	  
 })
 
-Tab:AddButton({
+SistemTab:AddButton({
 	Name = "Send The Message!",
 	Callback = function()
       		print("sended the message") print(bug)
