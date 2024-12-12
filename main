@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Bryan Hub v0.2", HidePremium = false, SaveConfig = true, ConfigFolder = "Bryan_Hub"})
+local Window = OrionLib:MakeWindow({Name = "Bryan Hub v0.2.1", HidePremium = false, SaveConfig = true, ConfigFolder = "Bryan_Hub"})
 
 power = 16
 
@@ -118,11 +118,11 @@ local Section = PlayerTab:AddSection({
 	Name = "The Follow Things May Not Work"
 })
 
-local Section = TutTab:AddSection({
+local Section = PlayerTab:AddSection({
 	Name = "Please Dont Report"
 })
 
-local Section = TutTab:AddSection({
+local Section = PlayerTab:AddSection({
 	Name = "It Is Being Fixed!"
 })
 
