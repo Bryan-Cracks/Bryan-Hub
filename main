@@ -1,7 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Bryan Hub v0.2.1", HidePremium = false, SaveConfig = true, ConfigFolder = "Bryan_Hub"})
-
-power = 16
+local Window = OrionLib:MakeWindow({Name = "Bryan Hub v0.2.2", HidePremium = false, SaveConfig = true, ConfigFolder = "Bryan_Hub"})
 
 OrionLib:MakeNotification({
 	Name = "Hello",
@@ -16,12 +14,6 @@ local TutTab = Window:MakeTab({
 	Name = "Info Update",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
-})
-
-
-
-local Section = TutTab:AddSection({
-	Name = "Hello friend! Im The Bryan Hub, Please Be Happy"
 })
 
 local Section = TutTab:AddSection({
@@ -54,6 +46,26 @@ local Section = TutTab:AddSection({
 
 local Section = TutTab:AddSection({
 	Name = "Fixed Bugs"
+})
+
+local Section = TutTab:AddSection({
+	Name = "UPDATE BETA 0.2.2!"
+})
+
+local Section = TutTab:AddSection({
+	Name = "Fixed Some Bugs"
+})
+
+local Section = TutTab:AddSection({
+	Name = "Not Working Functions Removed"
+})
+
+local Section = TutTab:AddSection({
+	Name = "Added Some Cool Functions"
+})
+
+local Section = TutTab:AddSection({
+	Name = "Jump Bug Fixed"
 })
 
 TutTab:AddButton({
@@ -90,113 +102,15 @@ PlayerTab:AddSlider({
 
 PlayerTab:AddSlider({
 	Name = "Jump Power",
-	Min = 16,
+	Min = 50,
 	Max = 500,
-	Default = 16,
+	Default = 50,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	ValueName = "Height",
 	Callback = function(Value)
 		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
 	end    
-})
-
-PlayerTab:AddSlider({
-	Name = "Spin Power",
-	Min = 16,
-	Max = 50000,
-	Default = 16,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "Power",
-	Callback = function(Value)
-		power = Value
-	end    
-})
-
-local Section = PlayerTab:AddSection({
-	Name = "The Follow Things May Not Work"
-})
-
-local Section = PlayerTab:AddSection({
-	Name = "Please Dont Report"
-})
-
-local Section = PlayerTab:AddSection({
-	Name = "It Is Being Fixed!"
-})
-
-PlayerTab:AddTextbox({
-    Name = "Teleport",
-    Default = "User",
-    TextDisappear = false,
-    Callback = function(Value)
-        local targetPlayer = game.Players:FindFirstChild(Value)
-        if targetPlayer then
-   player.Character.HumanoidRootPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame 
-        else
-            OrionLib:MakeNotification({
-                Name = "Invalid Username",
-                Content = "Could not find player",
-                Image = "rbxassetid://4483345998",
-                Time = 3
-            })
-        end
-    end
-})
-
-PlayerTab:AddButton({
-	Name = "Reset Character",
-	Callback = function()
-      	player.Character.Humanoid.Health = 0
-      	OrionLib:MakeNotification({
-	Name = "Reset Success!",
-	Content = "Reseted Character",
-	Image = "rbxassetid://4483345998",
-	Time = 2
-})
-
-  	end    
-})
-PlayerTab:AddButton({
-	Name = "Sit",
-	Callback = function()
-      	player.Character.Humanoid.Sit = true
-      	OrionLib:MakeNotification({
-	Name = "Seated",
-	Content = "Success",
-	Image = "rbxassetid://4483345998",
-	Time = 2
-})
-end
-})
-PlayerTab:AddToggle({
-	Name = "Bhop",
-	Default = false,
-	Callback = function(Value)
-	    if Value == true then
-	        infinitejump = true
-	  OrionLib:MakeNotification({
-	Name = "Bhop Enabled",
-	Content = "Enabled",
-	Image = "rbxassetid://4483345998",
-	Time = 2
-	})
-     	 while infinitejump == true do
- 
-      	    wait()
-      	    player.Character.Humanoid.Jump = true
-      	    end
-      	else
-      	    	  OrionLib:MakeNotification({
-	Name = "Bhop Disabled",
-	Content = "Disabled",
-	Image = "rbxassetid://4483345998",
-	Time = 2
-	})
-	infinitejump = false
-  	 end
-   end
 })
 
 local Section = PlayerTab:AddSection({
@@ -211,10 +125,58 @@ PlayerTab:AddButton({
 })
 
 PlayerTab:AddButton({
-	Name = "Spin In The Selected Power",
+	Name = "Mobile Fly",
 	Callback = function()
-        loadstring(game:HttpGet(("https://raw.githubusercontent.com/Bryan-Cracks/Bryan-Hub/refs/heads/main/spinbuttonsorce"),true))()
+        loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")()
   	end    
+})
+
+PlayerTab:AddButton({
+	Name = "Reset",
+	Callback = function()
+		game.Players.LocalPlayer.Character.Head:Destroy()
+  	end    
+})
+
+PlayerTab:AddTextbox({
+	Name = "Kick Reason",
+	Default = "click in me to write the kick reason!",
+	TextDisappear = true,
+	Callback = function(Value)
+		kickreason = Value
+	end	  
+})
+
+
+PlayerTab:AddButton({
+	Name = "Kick You",
+	Callback = function()
+		game.Players.LocalPlayer:Kick(kickreason)
+  	end    
+})
+
+PlayerTab:AddButton({
+	Name = "Enable Noclip",
+	Callback = function()
+	    noclip = false
+                for _, part in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                    if part:IsA("BasePart") and part.CanCollide then
+                        part.CanCollide = noclip
+                    end
+                end
+            end
+})
+
+PlayerTab:AddButton({
+	Name = "Disable Noclip",
+	Callback = function()
+	    noclip = true
+        for _, part in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = noclip
+            end
+        end
+    end
 })
 
 -------new tab
